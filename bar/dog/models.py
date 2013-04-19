@@ -13,6 +13,8 @@ class datasink(models.Model):
     temperatureData = models.DecimalField(max_digits=maxTemperature, decimal_places=1)
     buckleData = models.BooleanField()
 
-    def __str__(self):
-        return self.macAddress
+    #def __str__(self):
+    #    return self.macAddress
 
+    def __unicode__(self):
+        return u'MAC:%s, Event: %s, Temp: %d, ' % (self.macAddress, self.eventType, self.temperatureData)
